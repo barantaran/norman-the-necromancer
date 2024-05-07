@@ -334,3 +334,6 @@ What would this game need if I want to publish it tomorrow?
 - [x] Bug between chilly + unchained
 - [x] King shouldn't be freezable
 - [ ] Submit
+
+## Improvements
+- [x] Implement graceful Morman's death
