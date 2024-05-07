@@ -227,7 +227,8 @@ export const PLAYING = 1;
 export const SHOPPING = 2;
 export const LOSE = 3;
 export const WIN = 4;
-export type State = typeof INTRO | typeof PLAYING | typeof SHOPPING | typeof LOSE | typeof WIN;
+export const OUTRO = 5;
+export type State = typeof INTRO | typeof PLAYING | typeof SHOPPING | typeof LOSE | typeof WIN| typeof OUTRO;
 
 export interface ShopItem {
   cost: number;

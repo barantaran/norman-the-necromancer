@@ -1,6 +1,6 @@
 import * as sprites from "./sprites.json";
 import { init, updateParticles, updateTweens } from "./engine";
-import { Game, INTRO, PLAYING, SHOPPING, WIN } from "./game";
+import { Game, INTRO, PLAYING, SHOPPING, WIN, LOSE, OUTRO } from "./game";
 import { render, screenToSceneCoords } from "./renderer";
 import { Cast, Resurrect } from "./actions";
 import { angleBetweenPoints } from "./helpers";
@@ -31,11 +31,20 @@ const INTRO_DIALOGUE = [
   "        Norman just brought himself back.",
 ];
 
-const OUTRO_DIALOGUE = [
+const OUTRO_DIALOGUE_WIN = [
   "",
   "It was over.",
   "Norman was able to study peacefully.",
   "But he knew that eventually, they'd be back.",
+  "THE END",
+];
+
+
+const OUTRO_DIALOGUE_LOSE = [
+  "",
+  "It was over.",
+  "Norman was fallen.",
+  "But he knew that eventually, he'll be back.",
   "THE END",
 ];
 
@@ -46,7 +55,13 @@ onpointerup = () => {
     game.player.sprite = sprites.norman_arms_down;
   }
 
-  Cast();
+  if(game.state === PLAYING) {
+    Cast()
+  };
+  
+  if(game.state === OUTRO){
+    window.location = window.location;
+  }
 }
 
 onpointermove = ({ clientX, clientY }) => {
@@ -94,6 +109,10 @@ function update(dt: number) {
     }
   }
 
+  if (game.state === LOSE) {
+    onLose();
+  }
+
   if (game.level === 2 && !normanIsBouncing) {
     game.player.addBehaviour(new March(game.player, 0));
     game.player.updateClock = 100;
@@ -104,7 +123,12 @@ function update(dt: number) {
 
 function onWin() {
   game.state = WIN;
-  game.dialogue = OUTRO_DIALOGUE;
+  game.dialogue = OUTRO_DIALOGUE_WIN;
+}
+
+function onLose() {
+  game.dialogue = OUTRO_DIALOGUE_LOSE;
+  setTimeout(()=>game.state=OUTRO, 2000);
 }
 
 let dialogueTimer = 0;

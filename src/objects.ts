@@ -1,7 +1,7 @@
 import * as sprites from "./sprites.json";
 import * as fx from "./fx";
 import * as sfx from "./sounds";
-import { Behaviour, GameObject } from "./game";
+import { Behaviour, GameObject, LOSE } from "./game";
 import { CORPSE, LIVING, SPELL, MOBILE, PLAYER, UNDEAD } from "./tags";
 import { DEG_180, DEG_90, randomElement, randomFloat, randomInt } from "./helpers";
 import { March, Attack, Damaging, Bleeding, Enraged, Summon, Invulnerable, DespawnTimer } from "./behaviours";
@@ -22,13 +22,21 @@ export function Player() {
   player.sprite = sprites.norman_arms_down;
   player.collisionMask = LIVING;
   player.updateSpeed = 1000;
-  player.hp = player.maxHp = 5;
+  player.hp = player.maxHp = 1;
   player.emitter = fx.resurrect(player);
   player.onCollision = unit => {
     Damage(player, unit.hp);
     Die(unit);
   };
-  player.onDeath = () => window.location = window.location;
+  player.onDeath = () => {
+    fx
+      .bones()
+      .extend(player.center())
+      .burst(7)
+      .remove();
+
+      game.state = LOSE;
+  };
   return player;
 }
 
