@@ -36,7 +36,7 @@ const OUTRO_DIALOGUE_WIN = [
   "It was over.",
   "Norman was able to study peacefully.",
   "But he knew that eventually, they'd be back.",
-  "THE END",
+  "TO BE COMTIMUED..",
 ];
 
 
