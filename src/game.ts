@@ -259,7 +259,7 @@ export class Game {
 
   spell: Spell = {
     targetAngle: 0,
-    targetRadius: 15,
+    targetRadius: 20,
     basePower: 180,
     shotsPerRound: 1,
     shotOffsetAngle: 0.1,
