@@ -13,13 +13,11 @@ export function screenshake(time: number) {
   screenShakeTimer = time;
 }
 
-let sceneOrigin = Point(0, 150);
-
 export function screenToSceneCoords(x: number, y: number): Point {
   let r = canvas.getBoundingClientRect();
   let sx = (x - r.x) * (canvas.width / r.width) | 0;
   let sy = (y - r.y) * (canvas.height / r.height) | 0;
-  return { x: sx, y: sceneOrigin.y - sy };
+  return { x: sx / game.stage.scale, y: sy / game.stage.scale - game.sceneOrigin.y};
 }
 
 export function render(dt: number) {
@@ -31,11 +29,12 @@ export function render(dt: number) {
     ctx.translate(randomInt(2), randomInt(2));
   }
 
-  ctx.translate(sceneOrigin.x, sceneOrigin.y);
+  ctx.translate(game.sceneOrigin.x, game.sceneOrigin.y);
   drawBackground();
   drawParticles();
   drawObjects();
   if (game.state === PLAYING) drawReticle();
+  if(game.debugMode) drawSceneDebug();
   ctx.restore();
 
   drawHud();
@@ -46,13 +45,13 @@ export function render(dt: number) {
 }
 
 function drawShop() {
-  write("Rituals\n\n", 160, 20);
+  write("Rituals:\n\n", 160, 20);
   let selected = shop.items[shop.selectedIndex];
   for (let item of shop.items) {
     write(
-      `${item === selected ? ">" : " "}${
+      `${item === selected ? ">" : ""}${
         item.name
-      } $${item.cost}\n`,
+      }  $${item.cost}\n`,
     );
   }
   write("\n" + selected?.description + "\n");
@@ -80,15 +79,15 @@ function drawHud() {
   let souls = game.souls | 0;
   if (souls) {
     let multiplier = game.getStreakMultiplier();
-    let bonus = multiplier ? `(+${multiplier * 100 + "%"})` : "";
-    write(`${ICON_SOULS}${souls} ${bonus}`, canvas.width / 2 - 30, 0);
+    let bonus = multiplier ? `..+${multiplier * 100 + "%"}` : "";
+    write(`${ICON_SOULS}${souls} ${bonus}`, game.stage.width / 2 - 30, 0);
   }
 
-  write(`${game.level+1}-10`, canvas.width - 30, 2);
+  write(`Level ${game.level+1}`, game.stage.width - 50, 2);
 
   if (game.state === PLAYING) {
-    let x = 150;
-    let y = canvas.height - 12;
+    let x = game.stage.width / 2 - 40;
+    let y = game.stage.height / 2 + 60;
     let progress = clamp(game.ability.timer / game.ability.cooldown, 0, 1);
     drawNineSlice(sprites.pink_frame, x, y, 52 * (1 - progress) | 0, 10);
     write("Resurrect", x + 10, y + 2);
@@ -164,4 +163,24 @@ function drawParticles() {
       drawSceneSprite(sprite, particle.x, particle.y);
     }
   }
+}
+
+function drawSceneDebug() {
+  if (game.debugSceneDraw.length < 1) return;
+
+  while (game.debugSceneDraw.length) {
+    let debugDraw = game.debugSceneDraw.pop();
+    switch (debugDraw.type) {
+      case "line":
+        drawDebugLine(debugDraw.from, debugDraw.to, debugDraw.color);
+    }
+  }
+}
+
+function drawDebugLine(from: Point, to: Point, color: 'green'){
+  ctx.beginPath();
+  ctx.moveTo(from.x, from.y);
+  ctx.lineTo(to.x, to.y);
+  ctx.strokeStyle = color;
+  ctx.stroke();
 }

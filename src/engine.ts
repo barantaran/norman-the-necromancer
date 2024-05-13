@@ -1,6 +1,7 @@
 import spriteSrc from "./sprites.png";
 import { glyphWidth, glyphHeight, glyphWidthOverrides, lineHeight } from "./font.json";
 import { clamp, removeFromArray, vectorFromAngle } from "./helpers";
+import { render } from "./renderer";
 
 export type Sprite = number[];
 
@@ -111,31 +112,41 @@ export function write(text: string, x: number = textX, y: number = textY) {
     if (char === "\n") {
       textX = x;
       textY += lineHeight;
-    } else {
+    } else if(['$', '>', '*', '\x7F'].includes(char)) {
       let code = char.charCodeAt(0) - 32;
       let sx = (code % 32) * glyphWidth;
-      let sy = (code / 32 | 0) * glyphHeight;
+      let sy = ((code / 32) | 0) * glyphHeight;
+      let dx = textX;
+      let dy = textY + 1;
+      ctx.drawImage(spritesImage, sx, sy, glyphWidth, glyphHeight, dx, dy, glyphWidth, glyphHeight);
+      textX += glyphWidth + 2;
+    } else {
+      let code = char.charCodeAt(0) - 32;
       let dx = textX;
       let dy = textY;
-      ctx.drawImage(spritesImage, sx, sy, glyphWidth, glyphHeight, dx, dy, glyphWidth, glyphHeight);
-      textX += metrics[char] ?? glyphWidth;
+      ctx.font = `8px Arial`;
+      ctx.fillStyle = "white";
+      ctx.textBaseline = "top";
+      ctx.fillText(char, dx, dy);
+      const metrics = ctx.measureText(char);
+      textX += metrics.width;
     }
   }
 }
 
 function resize() {
   let { width: w, height: h } = canvas;
-  let scale = Math.min(innerWidth / w, innerHeight / h, 3);
-  canvas.style.width = canvas.width * scale + "px";
-  canvas.style.height = canvas.height * scale + "px";
+  game.stage.scale = Math.min(innerWidth / w, innerHeight / h, 3);
+  canvas.width = canvas.width * game.stage.scale;
+  canvas.height = canvas.height * game.stage.scale;
+  ctx.scale(game.stage.scale, game.stage.scale);
   ctx.imageSmoothingEnabled = false;
 }
 
 export function init(width: number, height: number, update: (dt: number) => void) {
   canvas.width = width;
   canvas.height = height;
-  (onresize = resize)();
-
+  resize();
   let t0 = 0;
   (function loop(t1 = 0) {
     requestAnimationFrame(loop);

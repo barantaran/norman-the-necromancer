@@ -182,6 +182,7 @@ export interface Death {
 interface Stage {
   width: number;
   height: number;
+  scale: number;
   floor: number;
   ceiling: number;
 }
@@ -247,7 +248,8 @@ export function ShopItem(
 }
 
 export class Game {
-  stage: Stage = { width: 400, height: 200, floor: 0, ceiling: 200 };
+  stage: Stage = { width: 400, height: 200, scale: 1, floor: 0, ceiling: 200 };
+  sceneOrigin: Point = Point(0,150);
   objects: GameObject[] = [];
   player: GameObject = undefined!;
   rituals: Ritual[] = [];
@@ -256,6 +258,8 @@ export class Game {
   streak: number = 0;
   level: number = 0;
   dialogue: string[] = [];
+  debugSceneDraw: any[] = [];
+  debugMode: boolean = false;
 
   spell: Spell = {
     targetAngle: 0,
@@ -263,7 +267,7 @@ export class Game {
     basePower: 180,
     shotsPerRound: 1,
     shotOffsetAngle: 0.1,
-    maxCasts: 3,
+    maxCasts: 1,
     casts: 3,
     castRechargeRate: 1000,
     castRechargeTimer: 0,

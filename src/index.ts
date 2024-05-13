@@ -15,6 +15,7 @@ import { March } from "./behaviours";
 let player = Player();
 player.sprite = sprites.skull;
 let game = new Game(player);
+// game.debugMode = true;
 let paused = false;
 
 const ARROW_UP = 38;
@@ -67,7 +68,7 @@ onpointerup = () => {
 onpointermove = ({ clientX, clientY }) => {
   let p1 = player.center();
   let p2 = screenToSceneCoords(clientX, clientY);
-  game.spell.targetAngle = angleBetweenPoints(p1, p2);
+  game.spell.targetAngle = angleBetweenPoints(p1, {x:p2.x,y:-p2.y});
 }
 
 onkeydown = ({ which: key }) => {
