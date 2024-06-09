@@ -11,6 +11,10 @@ import { buy, enterShop, selectShopIndex, shop } from "./shop";
 import { dust } from "./fx";
 import { BPM, play } from "./sounds";
 import { March } from "./behaviours";
+import { initLocales } from './localization';
+import i18next from "i18next";
+
+initLocales();
 
 let player = Player();
 player.sprite = sprites.skull;
@@ -25,7 +29,7 @@ const ENTER = 13;
 const KEY_P = 80;
 
 const INTRO_DIALOGUE = [
-  "Norman wasn't a particularly popular necromancer...",
+  i18next.t('INTRO_DIALOGUE_1'),
   "         The other villagers hunted him.",
   "     Sometimes they even finished the job (@)",
   "  But like any self-respecting necromancer...",
