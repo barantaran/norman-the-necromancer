@@ -1,3 +1,3 @@
 chrome.action.onClicked.addListener(tab => {
-  chrome.tabs.create({ url: 'chrome-extension://adpijdifplimenijoidmijmanfcfjpog/index.html' });
+  chrome.tabs.create({ url: chrome.runtime.getURL('index.html') });
 });
