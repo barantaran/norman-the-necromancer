@@ -1,0 +1,10 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "Necromancer - chrome game"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "Norman Necromancer"
+  }
+}
