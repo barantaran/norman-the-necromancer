@@ -7,6 +7,7 @@ import { DEG_180, randomFloat, randomInt } from "./helpers";
 import { SkeletonLord, Spell } from "./objects";
 import { CORPSE, LIVING } from "./tags";
 import { shop } from "./shop";
+import { getMsg } from './locales';
 
 // Ritual tags
 const NONE = 0;
@@ -20,15 +21,15 @@ const CURSE = 1 << 6;
 
 export let Streak: Ritual = {
   tags: NONE,
-  name: "Streak",
-  description: "",
+  name: getMsg("RITUAL_STREAK_NAME"),
+  description: getMsg("RITUAL_STREAK_DESC"),
   onCast: spell => spell.addBehaviour(new HitStreak(spell)),
 };
 
 export let Bouncing: Ritual = {
   tags: BOUNCING,
-  name: "Bouncing",
-  description: "Spells bounce",
+  name: getMsg("RITUAL_BOUNCING_NAME"),
+  description: getMsg("RITUAL_BOUNCING_DESC"),
   onCast(spell) {
     spell.addBehaviour(new DespawnTimer(spell, 3000));
     spell.despawnOnBounce = false;
@@ -40,8 +41,8 @@ export let Doubleshot: Ritual = {
   tags: SPLITTING,
   exclusiveTags: SPLITTING,
   rarity: RARE,
-  name: "Doubleshot",
-  description: "Cast 2 spells",
+  name: getMsg("RITUAL_DOUBLESHOT_NAME"),
+  description: getMsg("RITUAL_DOUBLESHOT_DESC"),
   onActive() {
     game.spell.shotsPerRound = 2;
   },
@@ -50,8 +51,8 @@ export let Doubleshot: Ritual = {
 export let Hunter: Ritual = {
   tags: HOMING,
   rarity: RARE,
-  name: "Hunter",
-  description: "Spells seek targets",
+  name: getMsg("RITUAL_HUNTER_NAME"),
+  description: getMsg("RITUAL_HUNTER_DESC"),
   onCast(projectile) {
     projectile.addBehaviour(new Seeking(projectile));
   },
@@ -59,8 +60,8 @@ export let Hunter: Ritual = {
 
 export let Weightless: Ritual = {
   tags: NONE,
-  name: "Weightless",
-  description: "Spells are not affected by gravity",
+  name: getMsg("RITUAL_WEIGHTLESS_NAME"),
+  description: getMsg("RITUAL_WEIGHTLESS_DESC"),
   onCast(spell) {
     spell.mass = 0;
     spell.friction = 0;
@@ -90,8 +91,8 @@ class KnockbackSpell extends Behaviour {
 
 export let Knockback: Ritual = {
   tags: NONE,
-  name: "Knockback",
-  description: "Spells knock backwards",
+  name: getMsg("RITUAL_KNOCKBACK_NAME"),
+  description: getMsg("RITUAL_KNOCKBACK_DESC"),
   onCast(spell) {
     spell.addBehaviour(new KnockbackSpell(spell));
   },
@@ -100,8 +101,8 @@ export let Knockback: Ritual = {
 export let Ceiling: Ritual = {
   tags: NONE,
   requiredTags: BOUNCING,
-  name: "Ceiling",
-  description: "Adds a ceiling",
+  name: getMsg("RITUAL_CEILING_NAME"),
+  description: getMsg("RITUAL_CEILING_DESC"),
   onActive() {
     game.stage.ceiling = 48;
   },
@@ -134,8 +135,8 @@ export let Rain: Ritual = {
   tags: SPLITTING,
   exclusiveTags: SPLITTING,
   rarity: RARE,
-  name: "Rain",
-  description: "Spells split when they drop",
+  name: getMsg("RITUAL_RAIN_NAME"),
+  description: getMsg("RITUAL_RAIN_DESC"),
   recursive: false,
   onCast(spell) {
     spell.addBehaviour(new RainSpell(spell));
@@ -144,8 +145,8 @@ export let Rain: Ritual = {
 
 export let Drunkard: Ritual = {
   tags: NONE,
-  name: "Drunkard",
-  description: "2x damage, wobbly aim",
+  name: getMsg("RITUAL_DRUNKARD_NAME"),
+  description: getMsg("RITUAL_DRUNKARD_DESC"),
   onCast(spell) {
     spell.vx += randomInt(100) - 50;
     spell.vy += randomInt(100) - 50;
@@ -155,8 +156,8 @@ export let Drunkard: Ritual = {
 
 export let Seer: Ritual = {
   tags: NONE,
-  name: "Seer",
-  description: "Spells pass through the dead",
+  name: getMsg("RITUAL_SEER_NAME"),
+  description: getMsg("RITUAL_SEER_DESC"),
   onCast(spell) {
     spell.collisionMask = LIVING;
   }
@@ -164,8 +165,8 @@ export let Seer: Ritual = {
 
 export let Tearstone: Ritual = {
   tags: NONE,
-  name: "Tearstone",
-  description: "2x damage when < half HP",
+  name: getMsg("RITUAL_TEARSTONE_NAME"),
+  description: getMsg("RITUAL_TEARSTONE_DESC"),
   onCast(spell) {
     if (game.player.hp < game.player.maxHp / 2) {
       spell.getBehaviour(Damaging)!.amount *= 3;
@@ -175,8 +176,8 @@ export let Tearstone: Ritual = {
 
 export let Impatience: Ritual = {
   tags: NONE,
-  name: "Impatience",
-  description: "Resurrection recharges 2x faster",
+  name: getMsg("RITUAL_IMPATIENCE_NAME"),
+  description: getMsg("RITUAL_IMPATIENCE_DESC"),
   onActive() {
     game.ability.cooldown /= 2;
   }
@@ -184,8 +185,8 @@ export let Impatience: Ritual = {
 
 export let Bleed: Ritual = {
   tags: CURSE,
-  name: "Bleed",
-  description: "Inflicts bleed on hits",
+  name: getMsg("RITUAL_BLEED_NAME"),
+  description: getMsg("RITUAL_BLEED_DESC"),
   onCast(spell: GameObject) {
     spell.sprite = sprites.p_red_skull;
     spell.emitter!.extend({
@@ -207,8 +208,8 @@ export let Bleed: Ritual = {
 
 export let Allegiance: Ritual = {
   tags: NONE,
-  name: "Allegiance",
-  description: "Summon your honour guard after resurrections",
+  name: getMsg("RITUAL_ALLEGIANCE_NAME"),
+  description: getMsg("RITUAL_ALLEGIANCE_DESC"),
   onResurrect() {
     for (let i = 0; i < 3; i++) {
       let unit = SkeletonLord();
@@ -220,13 +221,13 @@ export let Allegiance: Ritual = {
 
 export let Salvage: Ritual = {
   tags: NONE,
-  name: "Salvage",
-  description: "Corpses become souls at the end of levels",
+  name: getMsg("RITUAL_SALVAGE_NAME"),
+  description: getMsg("RITUAL_SALVAGE_DESC"),
   onLevelEnd() {
     let corpses = game.objects.filter(object => object.is(CORPSE));
 
     for (let corpse of corpses) {
-      let emitter = fx.bones().extend({
+        let emitter = fx.bones().extend({
         ...corpse.center(),
         variants: [[sprites.p_green_skull]],
         duration: [100, 1000],
@@ -242,8 +243,8 @@ export let Salvage: Ritual = {
 export let Studious: Ritual = {
   tags: NONE,
   rarity: RARE,
-  name: "Studious",
-  description: "Rituals are 50% cheaper",
+  name: getMsg("RITUAL_STUDIOUS_NAME"),
+  description: getMsg("RITUAL_STUDIOUS_DESC"),
   onShopEnter() {
     for (let item of shop.items) {
       item.cost = item.cost / 2 | 0;
@@ -254,8 +255,8 @@ export let Studious: Ritual = {
 export let Electrodynamics: Ritual = {
   tags: NONE,
   rarity: RARE,
-  name: "Electrodynamics",
-  description: "Lightning strikes after hits",
+  name: getMsg("RITUAL_ELECTRODYNAMICS_NAME"),
+  description: getMsg("RITUAL_ELECTRODYNAMICS_DESC"),
   onCast(spell) {
     spell.addBehaviour(new LightningStrike(spell));
   },
@@ -263,8 +264,8 @@ export let Electrodynamics: Ritual = {
 
 export let Chilly: Ritual = {
   tags: NONE,
-  name: "Chilly",
-  description: "10% chance to freeze enemies",
+  name: getMsg("RITUAL_CHILLY_NAME"),
+  description: getMsg("RITUAL_CHILLY_DESC"),
   onCast(spell) {
     if (randomFloat() <= 0.1) {
       spell.emitter!.variants = [[sprites.p_ice_1, sprites.p_ice_2, sprites.p_ice_3]];
@@ -284,8 +285,8 @@ export let Chilly: Ritual = {
 
 export let Giants: Ritual = {
   tags: NONE,
-  name: "Giants",
-  description: "20% chance to resurrect giant skeletons",
+  name: getMsg("RITUAL_GIANTS_NAME"),
+  description: getMsg("RITUAL_GIANTS_DESC"),
   onResurrection(object) {
     if (randomFloat() < 0.2) {
       game.despawn(object);
@@ -296,8 +297,8 @@ export let Giants: Ritual = {
 
 export let Avarice: Ritual = {
   tags: NONE,
-  name: "Avarice",
-  description: "+1 soul for each corpse you resurrect",
+  name: getMsg("RITUAL_AVARICE_NAME"),
+  description: getMsg("RITUAL_AVARICE_DESC"),
   onResurrection() {
     game.addSouls(1);
   },
@@ -305,8 +306,8 @@ export let Avarice: Ritual = {
 
 export let Hardened: Ritual = {
   tags: NONE,
-  name: "Hardened",
-  description: "Undead have +1 HP*",
+  name: getMsg("RITUAL_HARDENED_NAME"),
+  description: getMsg("RITUAL_HARDENED_DESC"),
   onResurrection(object) {
     object.hp = object.maxHp += 1;
   }

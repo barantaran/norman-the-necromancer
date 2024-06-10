@@ -1,4 +1,6 @@
 import * as sprites from "./sprites.json";
+import { getMsg } from "./locales";
+
 import { canvas, clear, ctx, drawNineSlice, drawSceneSprite, drawSprite, particleEmitters, Sprite, write } from "./engine";
 import { clamp, Point, randomInt } from "./helpers";
 import { INTRO, PLAYING, SHOPPING } from "./game";
@@ -45,7 +47,7 @@ export function render(dt: number) {
 }
 
 function drawShop() {
-  write("Rituals:\n\n", 160, 20);
+  write(getMsg("RITUALS_HEADER"), 160, 20);
   let selected = shop.items[shop.selectedIndex];
   for (let item of shop.items) {
     write(
@@ -83,15 +85,15 @@ function drawHud() {
     write(`${ICON_SOULS}${souls} ${bonus}`, game.stage.width / 2 - 30, 0);
   }
 
-  write(`Level ${game.level+1}`, game.stage.width - 50, 2);
+  write(`${getMsg('LEVEL')} ${game.level+1}`, game.stage.width - 50, 2);
 
   if (game.state === PLAYING) {
     let x = game.stage.width / 2 - 40;
     let y = game.stage.height / 2 + 60;
     let progress = clamp(game.ability.timer / game.ability.cooldown, 0, 1);
     drawNineSlice(sprites.pink_frame, x, y, 52 * (1 - progress) | 0, 10);
-    write("Resurrect", x + 10, y + 2);
-    if (progress === 1) write(" (Space)");
+    write(getMsg("RESSURECT"), x + 10, y + 2);
+    if (progress === 1) write(" (" + getMsg("SPACE")+")");
     else write(" (" + (((1 - progress) * game.ability.cooldown) / 1000 | 0) + "s)");
     drawSprite(sprites.skull, x + 1, y + 1);
   }

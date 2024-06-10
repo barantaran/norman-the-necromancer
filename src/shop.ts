@@ -3,6 +3,7 @@ import { PLAYING, RARE, Ritual, ShopItem, SHOPPING } from "./game";
 import { clamp, randomInt, removeFromArray, shuffled } from "./helpers";
 import { nextLevel } from "./levels";
 import { useLevelSynths, useShopSynths } from "./sounds";
+import { getMsg } from "./locales";
 
 export interface Shop {
   rituals: Ritual[];
@@ -47,20 +48,21 @@ export function restockShop() {
   let exp = Math.pow(game.level + 1, 2);
   let items: (ShopItem | false)[] = [
     game.player.hp < game.player.maxHp &&
-      ShopItem(10 * game.level, "Heal", `Heal 1*`, () => Damage(game.player, -1)),
+      ShopItem(10 * game.level, getMsg("HEAL_NAME"), getMsg("HEAL_DESCRIPTION"), () => Damage(game.player, -1)),
 
-    ShopItem(10 * exp, "Renew", `+1* max hp`, () => {
+    ShopItem(10 * exp, getMsg("RENEW_NAME"), getMsg("RENEW_DESCRIPTION"), () => {
       game.player.maxHp++;
       game.player.hp++;
     }),
 
-    ShopItem(10 * exp, "Recharge", "+1\x7F max casts", () => game.spell.maxCasts++),
+    ShopItem(10 * exp, getMsg("RECHARGE_NAME"), getMsg("RECHARGE_DESCRIPTION"), () => game.spell.maxCasts++),
 
     ...createRitualItems(),
-    ShopItem(0, "Continue", "Begin the next level", () => exitShop()),
+    ShopItem(0, getMsg("CONTINUE_NAME"), getMsg("CONTINUE_DESCRIPTION"), () => exitShop()),
   ];
   shop.items = items.filter(item => item) as ShopItem[];
 }
+
 
 export function createRitualItems(): ShopItem[] {
   let rituals = shuffled(shop.rituals.filter(ritual => game.canAddRitual(ritual)));
