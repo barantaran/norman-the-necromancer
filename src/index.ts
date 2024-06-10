@@ -11,10 +11,7 @@ import { buy, enterShop, selectShopIndex, shop } from "./shop";
 import { dust } from "./fx";
 import { BPM, play } from "./sounds";
 import { March } from "./behaviours";
-import { initLocales } from './localization';
-import i18next from "i18next";
-
-initLocales();
+import { getMsg } from "./locales";
 
 let player = Player();
 player.sprite = sprites.skull;
@@ -29,28 +26,27 @@ const ENTER = 13;
 const KEY_P = 80;
 
 const INTRO_DIALOGUE = [
-  i18next.t('INTRO_DIALOGUE_1'),
-  "         The other villagers hunted him.",
-  "     Sometimes they even finished the job (@)",
-  "  But like any self-respecting necromancer...",
-  "        Norman just brought himself back.",
+  getMsg("INTRO_DIALOGUE_1"),
+  getMsg("INTRO_DIALOGUE_2"),
+  getMsg("INTRO_DIALOGUE_3"),
+  getMsg("INTRO_DIALOGUE_4"),
+  getMsg("INTRO_DIALOGUE_5"),
 ];
 
 const OUTRO_DIALOGUE_WIN = [
-  "",
-  "It was over.",
-  "Norman was able to study peacefully.",
-  "But he knew that eventually, they'd be back.",
-  "TO BE COMTIMUED..",
+  getMsg("OUTRO_DIALOGUE_WIN_1"),
+  getMsg("OUTRO_DIALOGUE_WIN_2"),
+  getMsg("OUTRO_DIALOGUE_WIN_3"),
+  getMsg("OUTRO_DIALOGUE_WIN_4"),
+  getMsg("OUTRO_DIALOGUE_WIN_5"),
 ];
 
-
 const OUTRO_DIALOGUE_LOSE = [
-  "",
-  "It was over.",
-  "Norman was fallen.",
-  "But he knew that eventually, he'll be back.",
-  "THE END",
+  getMsg("OUTRO_DIALOGUE_LOSE_1"),
+  getMsg("OUTRO_DIALOGUE_LOSE_2"),
+  getMsg("OUTRO_DIALOGUE_LOSE_3"),
+  getMsg("OUTRO_DIALOGUE_LOSE_4"),
+  getMsg("OUTRO_DIALOGUE_LOSE_5"),
 ];
 
 onpointerup = () => {
