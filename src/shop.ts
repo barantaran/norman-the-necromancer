@@ -68,19 +68,12 @@ export function createRitualItems(): ShopItem[] {
   let rituals = shuffled(shop.rituals.filter(ritual => game.canAddRitual(ritual)));
   let commons = rituals.filter(r => r.rarity !== RARE);
   let rares = rituals.filter(r => r.rarity === RARE);
-  let commonCost = 75 + randomInt(100);
-  let rareCost = 200 + randomInt(100);
-
-  let affordableCommons = commons.filter(r => commonCost <= game.souls);
-  let affordableRares = rares.filter(r => rareCost <= game.souls);
-
-  let pool = affordableRares.slice(0, 1).concat(affordableCommons.slice(0, 2));
-  
+  let pool = rares.slice(0, 1).concat(commons.slice(0, 2));
   return pool.map((ritual): ShopItem => {
     return {
       name: ritual.name,
       description: ritual.description,
-      cost: ritual.rarity === RARE ? rareCost : commonCost,
+      cost: ritual.rarity === RARE ? 200 + randomInt(100) : 75 + randomInt(100),
       purchase() {
         removeFromArray(shop.rituals, ritual);
         game.addRitual(ritual);
