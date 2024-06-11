@@ -150,8 +150,6 @@ const LOCALES: Locales = {
 };
 export function getMsg(key: string): string {
     const lng: string = navigator.language.split('-')[0] || 'en';
-    console.log(`Detected language: ${lng}`);
-    console.log(`Available languages: ${Object.keys(LOCALES).join(', ')}`);
     
     if (!LOCALES[lng]) {
         console.warn(`Language ${lng} is not supported. Falling back to 'en'.`);
