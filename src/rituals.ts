@@ -28,6 +28,7 @@ export let Streak: Ritual = {
 
 export let Bouncing: Ritual = {
   tags: BOUNCING,
+  rarity: RARE,
   name: getMsg("RITUAL_BOUNCING_NAME"),
   description: getMsg("RITUAL_BOUNCING_DESC"),
   onCast(spell) {

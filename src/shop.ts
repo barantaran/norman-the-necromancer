@@ -73,7 +73,7 @@ export function createRitualItems(): ShopItem[] {
     return {
       name: ritual.name,
       description: ritual.description,
-      cost: ritual.rarity === RARE ? 200 + randomInt(100) : 75 + randomInt(100),
+      cost: ritual.rarity === RARE ? 500 + randomInt(500) : 250 + randomInt(250),
       purchase() {
         removeFromArray(shop.rituals, ritual);
         game.addRitual(ritual);
