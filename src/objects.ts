@@ -136,7 +136,7 @@ export function TheKing() {
   let unit = Villager();
   unit.sprite = sprites.the_king;
   unit.updateSpeed = 5000;
-  unit.hp = unit.maxHp = 300;
+  unit.hp = unit.maxHp = 250;
   unit.behaviours = [];
   unit.mass = 1000;
   unit.emitter = fx.royalty().extend({
