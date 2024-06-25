@@ -9,7 +9,7 @@ import { isComplete, isLevelFinished, updateLevel } from "./levels";
 import { Studious, Bleed, Bouncing, Tearstone, Ceiling, Drunkard, Salvage, Chilly, Hunter, Knockback, Rain, Seer, Doubleshot, Streak, Weightless, Electrodynamics, Impatience, Giants, Avarice, Hardened, Allegiance } from "./rituals";
 import { buy, enterShop, selectShopIndex, shop } from "./shop";
 import { dust } from "./fx";
-import { BPM, play } from "./sounds";
+import { BPM, play, toggleMusic } from "./sounds";
 import { March } from "./behaviours";
 import { getMsg } from "./locales";
 
@@ -24,6 +24,9 @@ const ARROW_DOWN = 40;
 const SPACE = 32;
 const ENTER = 13;
 const KEY_P = 80;
+const KEY_S = 83;
+const KEY_s = 115;
+
 
 const INTRO_DIALOGUE = [
   getMsg("INTRO_DIALOGUE_1"),
@@ -79,6 +82,10 @@ onkeydown = ({ which: key }) => {
     if (key === ARROW_UP) selectShopIndex(-1);
     if (key === ARROW_DOWN) selectShopIndex(+1);
     if (key === ENTER) buy();
+  }
+
+  if(key === KEY_S || key === KEY_s) {
+    toggleMusic();
   }
 }
 

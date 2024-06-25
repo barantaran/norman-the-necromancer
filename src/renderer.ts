@@ -87,9 +87,10 @@ function drawHud() {
 
   write(`${getMsg('LEVEL')} ${game.level+1}`, game.stage.width - 50, 2);
 
+  let x = game.stage.width / 2 - 40;
+  let y = game.stage.height / 2 + 60;
+
   if (game.state === PLAYING) {
-    let x = game.stage.width / 2 - 40;
-    let y = game.stage.height / 2 + 60;
     let progress = clamp(game.ability.timer / game.ability.cooldown, 0, 1);
     drawNineSlice(sprites.pink_frame, x, y, 52 * (1 - progress) | 0, 10);
     write(getMsg("RESSURECT"), x + 10, y + 2);
@@ -97,6 +98,8 @@ function drawHud() {
     else write(" (" + (((1 - progress) * game.ability.cooldown) / 1000 | 0) + "s)");
     drawSprite(sprites.skull, x + 1, y + 1);
   }
+
+  write(getMsg("SOUND_TOGG"), x - 150, y + 2);
 }
 
 function drawOrbs(

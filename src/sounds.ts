@@ -287,3 +287,8 @@ export function useLevelSynths() {
     for (let synth of normalLevelSynths) synth.enter();
   }
 }
+
+// Function to toggle music on/off
+export function toggleMusic() {
+  masterGain.gain.value = masterGain.gain.value > 0 ? 0 : 1;
+}
