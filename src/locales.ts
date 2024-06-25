@@ -218,7 +218,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "Rituale:\n\n",
         "LEVEL": "Stufe",
         "RESSURECT": "Wiederauferstehen",
-        "SPACE": "Raum",
+        "SPACE": "Leertaste",
         "SOUND_TOGG": "Ton umschalten - S",
     },
     'es': {
@@ -290,7 +290,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "Rituals:\n\n",
         "LEVEL": "Nivel",
         "RESSURECT": "Resucitar",
-        "ESPACIO": "Espacio",
+        "ESPACIO": "Barra espaciadora",
         "SOUND_TOGG": "Alternar sonido - S",
     },
     'fr':{
@@ -362,7 +362,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "Rituels:\n\n",
         "LEVEL": "Niveau",
         "RESSURECT": "Ressusciter",
-        "SPACE": "Espace",
+        "SPACE": "Barre d'espace",
         "SOUND_TOGG": "Activer/Désactiver le son - S"
     },
     'pt_PT':{
@@ -650,7 +650,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "儀式:\n\n",
         "LEVEL": "レベル",
         "RESSURECT": "復活",
-        "SPACE": "スペース",
+        "SPACE": "スペースキー",
         "SOUND_TOGG": "サウンドを切り替える - S"
     },
     'bg':{
@@ -722,7 +722,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "Ритуали:\n\n",
         "LEVEL": "Ниво",
         "RESSURECT": "Възкресяване",
-        "SPACE": "Spacebar",
+        "SPACE": "Интервал",
         "SOUND_TOGG": "Превключване на звука - S"
     },
     'zh_CN':{
@@ -794,7 +794,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "仪式:\n\n",
         "LEVEL": "等级",
         "RESSURECT": "复活",
-        "SPACE": "Spacebar",
+        "SPACE": "空格键",
         "SOUND_TOGG": "切换声音 - S"
     },
     'zh_TW':{
@@ -866,7 +866,7 @@ const LOCALES: Locales = {
         "RITUALS_HEADER": "仪式:\n\n",
         "LEVEL": "等级",
         "RESSURECT": "复活",
-        "SPACE": "Spacebar",
+        "SPACE": "空格鍵",
         "SOUND_TOGG": "切換聲音 - S"
     }
 };
