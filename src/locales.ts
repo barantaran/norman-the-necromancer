@@ -144,7 +144,7 @@ const LOCALES: Locales = {
         "CONTINUE_NAME": "В бой!",
         "CONTINUE_DESCRIPTION": "Cледующая волна",
         "RITUALS_HEADER": "Ритуалы:\n\n",
-        "LEVEL": "Волна",
+        "LEVEL": "Уровень",
         "RESSURECT": "Воскрешение",
         "SPACE": "Пробел",
         "SOUND_TOGG": "Переключить звук - S",
