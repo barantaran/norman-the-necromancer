@@ -148,7 +148,7 @@ function updateDialogue(dt: number) {
 
     // If the player watched the whole dialogue, remind them to click to start
     if (game.state === INTRO && game.dialogue.length === 0) {
-      game.dialogue.push("                (Click to begin)");
+      game.dialogue.push("                "+getMsg("CLK_TOBEGIN"));
     }
   }
 }

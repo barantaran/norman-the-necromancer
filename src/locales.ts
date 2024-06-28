@@ -76,6 +76,7 @@ const LOCALES: Locales = {
         "RESSURECT": "Resurrect",
         "SPACE": "Space",
         "SOUND_TOGG": "Toggle sound - S",
+        "CLK_TOBEGIN": "(Click to begin)",
     },
     'ru': {
         "INTRO_DIALOGUE_1": "Норман не был особо популярным некромантом...",
@@ -148,6 +149,7 @@ const LOCALES: Locales = {
         "RESSURECT": "Воскрешение",
         "SPACE": "Пробел",
         "SOUND_TOGG": "Переключить звук - S",
+        "CLK_TOBEGIN": "(Клик, чтобы начать)",
     },
     'de': {
         "INTRO_DIALOGUE_1": "Norman war kein besonders beliebter Nekromant...",
@@ -220,6 +222,7 @@ const LOCALES: Locales = {
         "RESSURECT": "Wiederauferstehen",
         "SPACE": "Leertaste",
         "SOUND_TOGG": "Ton umschalten - S",
+        "CLK_TOBEGIN": "(Klicken, um zu starten)",
     },
     'es': {
         "INTRO_DIALOGUE_1": "Norman no era un nigromante especialmente popular...",
@@ -292,6 +295,7 @@ const LOCALES: Locales = {
         "RESSURECT": "Resucitar",
         "ESPACIO": "Barra espaciadora",
         "SOUND_TOGG": "Alternar sonido - S",
+        "CLK_TOBEGIN": "(Haga clic para empezar)",
     },
     'fr':{
         "INTRO_DIALOGUE_1": "Norman n'était pas un nécromancien particulièrement populaire...",
@@ -363,7 +367,8 @@ const LOCALES: Locales = {
         "LEVEL": "Niveau",
         "RESSURECT": "Ressusciter",
         "SPACE": "Barre d'espace",
-        "SOUND_TOGG": "Activer/Désactiver le son - S"
+        "SOUND_TOGG": "Activer/Désactiver le son - S",
+        "CLK_TOBEGIN": "(Cliquer pour démarrer)",
     },
     'pt_PT':{
         "INTRO_DIALOGUE_1": "Norman não era um necromante particularmente popular...",
@@ -435,7 +440,8 @@ const LOCALES: Locales = {
         "LEVEL": "Nível",
         "RESSURECT": "Ressuscitar",
         "SPACE": "Espaço",
-        "SOUND_TOGG": "Alternar som - S"
+        "SOUND_TOGG": "Alternar som - S",
+        "CLK_TOBEGIN": "(Сlicar para começar)",
     },
     'pt_BR':{
         "INTRO_DIALOGUE_1": "Norman não era um necromante particularmente popular...",
@@ -507,7 +513,8 @@ const LOCALES: Locales = {
         "LEVEL": "Nível",
         "RESSURECT": "Ressuscitar",
         "SPACE": "Espaço",
-        "SOUND_TOGG": "Alternar som - S"
+        "SOUND_TOGG": "Alternar som - S",
+        "CLK_TOBEGIN": "(Сlique para começar)",
     },
     'it':{
         "INTRO_DIALOGUE_1": "Norman non era un negromante particolarmente popolare...",
@@ -579,7 +586,8 @@ const LOCALES: Locales = {
         "LEVEL": "Livello",
         "RESSURECT": "Risorgere",
         "SPACE": "Spazio",
-        "SOUND_TOGG": "Attiva/Disattiva audio - S"
+        "SOUND_TOGG": "Attiva/Disattiva audio - S",
+        "CLK_TOBEGIN": "(clicca per iniziare)",
     },
     'ja':{
         "INTRO_DIALOGUE_1": "ノーマンは特に人気のある黒魔術師ではなかった...",
@@ -651,7 +659,8 @@ const LOCALES: Locales = {
         "LEVEL": "レベル",
         "RESSURECT": "復活",
         "SPACE": "スペースキー",
-        "SOUND_TOGG": "サウンドを切り替える - S"
+        "SOUND_TOGG": "サウンドを切り替える - S",
+        "CLK_TOBEGIN": "(クリックで開始)",
     },
     'bg':{
         "INTRO_DIALOGUE_1": "Норман не беше особено популярен некромант...",
@@ -723,7 +732,8 @@ const LOCALES: Locales = {
         "LEVEL": "Ниво",
         "RESSURECT": "Възкресяване",
         "SPACE": "Интервал",
-        "SOUND_TOGG": "Превключване на звука - S"
+        "SOUND_TOGG": "Превключване на звука - S",
+        "CLK_TOBEGIN": "(Кликнете, за да започнете)",
     },
     'zh_CN':{
         "INTRO_DIALOGUE_1": "诺曼不是一个特别受欢迎的死灵法师......",
@@ -795,7 +805,8 @@ const LOCALES: Locales = {
         "LEVEL": "等级",
         "RESSURECT": "复活",
         "SPACE": "空格键",
-        "SOUND_TOGG": "切换声音 - S"
+        "SOUND_TOGG": "切换声音 - S",
+        "CLK_TOBEGIN": "(点击开始)",
     },
     'zh_TW':{
         "INTRO_DIALOGUE_1": "诺曼不是一个特别受欢迎的死灵法师......",
@@ -867,7 +878,8 @@ const LOCALES: Locales = {
         "LEVEL": "等级",
         "RESSURECT": "复活",
         "SPACE": "空格鍵",
-        "SOUND_TOGG": "切換聲音 - S"
+        "SOUND_TOGG": "切換聲音 - S",
+        "CLK_TOBEGIN": "(点击开始)",
     },
     'tr':{
         "INTRO_DIALOGUE_1": "Norman pek popüler bir büyücü değildi...",
@@ -940,6 +952,7 @@ const LOCALES: Locales = {
         "RESSURECT": "Dirilt",
         "SPACE": "Boşluk tuşu",
         "SOUND_TOGG": "Sesi değiştir - S",
+        "CLK_TOBEGIN": "(Başlamak için tıklayın)",
     }
 };
 export function getMsg(key: string): string {
