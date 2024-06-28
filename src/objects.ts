@@ -200,7 +200,7 @@ export function Champion() {
   unit.sprite = sprites.champion;
   unit.updateSpeed = 1000;
   unit.hp = unit.maxHp = 10;
-  unit.souls = 25;
+  unit.souls = 10;
   return unit;
 }
 
@@ -271,7 +271,7 @@ export function Piper() {
   unit.updateSpeed = 500;
   unit.hp = unit.maxHp = 15;
   unit.addBehaviour(new Summon(unit, Rat, 2000));
-  unit.souls = 100;
+  unit.souls = 25;
   return unit;
 }
 
@@ -279,7 +279,7 @@ export function Rat() {
   let unit = Villager();
   unit.sprite = sprites.rat;
   unit.updateSpeed = 200;
-  unit.souls = 5;
+  unit.souls = 0;
   unit.corpseChance = 0;
   return unit;
 }
@@ -376,7 +376,7 @@ export function Portal() {
   unit.sprite = sprites.portal;
   unit.tags = LIVING;
   unit.hp = unit.maxHp = 3;
-  unit.souls = 10;
+  unit.souls = 0;
   // Prevent the player from farming portals for souls
   unit.addBehaviour(new DespawnTimer(unit, 3000 * 10));
   unit.addBehaviour(
