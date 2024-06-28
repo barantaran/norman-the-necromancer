@@ -81,7 +81,7 @@ function drawHud() {
   let souls = game.souls | 0;
   if (souls) {
     let multiplier = game.getStreakMultiplier();
-    let bonus = multiplier ? `..+${multiplier * 100 + "%"}` : "";
+    let bonus = multiplier ? `..+${multiplier * 100 + "%"}  ${getMsg("STREAK_BONUS")}` : "";
     write(`${ICON_SOULS}${souls} ${bonus}`, game.stage.width / 2 - 30, 0);
   }
 
