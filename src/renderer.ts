@@ -99,7 +99,7 @@ function drawHud() {
     drawSprite(sprites.skull, x + 1, y + 1);
   }
 
-  write(getMsg("SOUND_TOGG"), x - 150, y + 2);
+  write(getMsg("SOUND_TOGG") + ", " + getMsg("PAUSE_TIP"), x - 150, y + 2);
 }
 
 function drawOrbs(

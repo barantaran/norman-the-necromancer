@@ -6,6 +6,7 @@ type Locales = {
 
 const LOCALES: Locales = {
     'en': {
+        "PAUSE_TIP": "Pause - P",
         "INTRO_DIALOGUE_1": "Norman wasn't a particularly popular necromancer...",
         "INTRO_DIALOGUE_2": "The other villagers hunted him.",
         "INTRO_DIALOGUE_3": "Sometimes they even finished the job (@)",
@@ -80,6 +81,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "streak bonus",
     },
     'ru': {
+        "PAUSE_TIP": "Пауза - P",
         "INTRO_DIALOGUE_1": "Норман не был особо популярным некромантом...",
         "INTRO_DIALOGUE_2": "Остальные жители деревни охотились на него.",
         "INTRO_DIALOGUE_3": "Иногда они даже добивали его (@)",
@@ -154,6 +156,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "бонус за точность",
     },
     'de': {
+        "PAUSE_TIP": "Pause - P",
         "INTRO_DIALOGUE_1": "Norman war kein besonders beliebter Nekromant...",
         "INTRO_DIALOGUE_2": "Die anderen Dorfbewohner haben ihn gejagt.",
         "INTRO_DIALOGUE_3": "Manchmal beendeten sie sogar den Job (@)",
@@ -228,6 +231,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "Treffsicherheits-Bonus",
     },
     'es': {
+        "PAUSE_TIP": "Pausa - P",
         "INTRO_DIALOGUE_1": "Norman no era un nigromante especialmente popular...",
         "INTRO_DIALOGUE_2": "Los otros aldeanos lo perseguían",
         "INTRO_DIALOGUE_3": "A veces incluso terminaban el trabajo (@)",
@@ -302,6 +306,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bonificación de puntería",
     },
     'fr':{
+        "PAUSE_TIP": "Pause - P",
         "INTRO_DIALOGUE_1": "Norman n'était pas un nécromancien particulièrement populaire...",
         "INTRO_DIALOGUE_2": "Les autres villageois le chassaient.",
         "INTRO_DIALOGUE_3": "Parfois, ils finissaient même le travail (@)",
@@ -376,6 +381,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "prime de tir",
     },
     'pt_PT':{
+        "PAUSE_TIP": "pausa - P",
         "INTRO_DIALOGUE_1": "Norman não era um necromante particularmente popular...",
         "INTRO_DIALOGUE_2": "Os outros aldeões caçavam-no.",
         "INTRO_DIALOGUE_3": "Às vezes até acabavam o trabalho (@)",
@@ -450,6 +456,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bónus de pontaria",
     },
     'pt_BR':{
+        "PAUSE_TIP": "Pausa - P",
         "INTRO_DIALOGUE_1": "Norman não era um necromante particularmente popular...",
         "INTRO_DIALOGUE_2": "Os outros aldeões caçavam-no.",
         "INTRO_DIALOGUE_3": "Às vezes até acabavam o trabalho (@)",
@@ -524,6 +531,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bônus de pontaria",
     },
     'it':{
+        "PAUSE_TIP": "Pausa - P",
         "INTRO_DIALOGUE_1": "Norman non era un negromante particolarmente popolare...",
         "INTRO_DIALOGUE_2": "Gli altri abitanti del villaggio gli davano la caccia.",
         "INTRO_DIALOGUE_3": "A volte hanno anche portato a termine il lavoro (@).",
@@ -598,6 +606,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bonus di tiro",
     },
     'ja':{
+        "PAUSE_TIP": "ポーズ - P",
         "INTRO_DIALOGUE_1": "ノーマンは特に人気のある黒魔術師ではなかった...",
         "INTRO_DIALOGUE_2": "他の村人たちは彼を狩った",
         "INTRO_DIALOGUE_3": "時には仕事を終わらせることさえあった(@)",
@@ -672,6 +681,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "射撃ボーナス",
     },
     'bg':{
+        "PAUSE_TIP": "Пауза - P",
         "INTRO_DIALOGUE_1": "Норман не беше особено популярен некромант...",
         "INTRO_DIALOGUE_2": "Другите селяни го преследваха.",
         "INTRO_DIALOGUE_3": "Понякога те дори довършваха работата (@)",
@@ -746,6 +756,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "бонус за стрелба",
     },
     'zh_CN':{
+        "PAUSE_TIP": "暂停 - P",
         "INTRO_DIALOGUE_1": "诺曼不是一个特别受欢迎的死灵法师......",
         "INTRO_DIALOGUE_2": "其他村民都在追杀他",
         "INTRO_DIALOGUE_3": "有时他们甚至完成了任务（@）",
@@ -820,6 +831,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "枪法奖励",
     },
     'zh_TW':{
+        "PAUSE_TIP": "暂停 - P",
         "INTRO_DIALOGUE_1": "诺曼不是一个特别受欢迎的死灵法师......",
         "INTRO_DIALOGUE_2": "其他村民都在追杀他",
         "INTRO_DIALOGUE_3": "有时他们甚至完成了任务（@）",
@@ -894,6 +906,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "枪法奖励",
     },
     'tr':{
+        "PAUSE_TIP": "Duraklat - P",
         "INTRO_DIALOGUE_1": "Norman pek popüler bir büyücü değildi...",
         "INTRO_DIALOGUE_2": "Diğer köylüler onun peşine düştü.",
         "INTRO_DIALOGUE_3": "Bazen işi bile bitirdiler (@)",
