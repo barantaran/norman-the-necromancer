@@ -6,6 +6,7 @@ type Locales = {
 
 const LOCALES: Locales = {
     'en': {
+        "SHOP_TIP": "Use ↑↓, ENTER",
         "PAUSE_TIP": "Pause - P",
         "INTRO_DIALOGUE_1": "Norman wasn't a particularly popular necromancer...",
         "INTRO_DIALOGUE_2": "The other villagers hunted him.",
@@ -81,6 +82,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "streak bonus",
     },
     'ru': {
+        "SHOP_TIP": "Используйте ↑↓ и ENTER",
         "PAUSE_TIP": "Пауза - P",
         "INTRO_DIALOGUE_1": "Норман не был особо популярным некромантом...",
         "INTRO_DIALOGUE_2": "Остальные жители деревни охотились на него.",
@@ -156,6 +158,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "бонус за точность",
     },
     'de': {
+        "SHOP_TIP": "Verwenden ↑↓, ENTER",
         "PAUSE_TIP": "Pause - P",
         "INTRO_DIALOGUE_1": "Norman war kein besonders beliebter Nekromant...",
         "INTRO_DIALOGUE_2": "Die anderen Dorfbewohner haben ihn gejagt.",
@@ -231,6 +234,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "Treffsicherheits-Bonus",
     },
     'es': {
+        "SHOP_TIP": "Utilice ↑↓, ENTER",
         "PAUSE_TIP": "Pausa - P",
         "INTRO_DIALOGUE_1": "Norman no era un nigromante especialmente popular...",
         "INTRO_DIALOGUE_2": "Los otros aldeanos lo perseguían",
@@ -306,6 +310,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bonificación de puntería",
     },
     'fr':{
+        "SHOP_TIP": "Utilisez ↑↓, ENTER",
         "PAUSE_TIP": "Pause - P",
         "INTRO_DIALOGUE_1": "Norman n'était pas un nécromancien particulièrement populaire...",
         "INTRO_DIALOGUE_2": "Les autres villageois le chassaient.",
@@ -381,6 +386,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "prime de tir",
     },
     'pt_PT':{
+        "SHOP_TIP": "Utilizar ↑↓, ENTER",
         "PAUSE_TIP": "pausa - P",
         "INTRO_DIALOGUE_1": "Norman não era um necromante particularmente popular...",
         "INTRO_DIALOGUE_2": "Os outros aldeões caçavam-no.",
@@ -456,6 +462,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bónus de pontaria",
     },
     'pt_BR':{
+        "SHOP_TIP": "Use ↑↓, ENTER",
         "PAUSE_TIP": "Pausa - P",
         "INTRO_DIALOGUE_1": "Norman não era um necromante particularmente popular...",
         "INTRO_DIALOGUE_2": "Os outros aldeões caçavam-no.",
@@ -531,6 +538,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bônus de pontaria",
     },
     'it':{
+        "SHOP_TIP": "Utilizzare ↑↓, ENTER",
         "PAUSE_TIP": "Pausa - P",
         "INTRO_DIALOGUE_1": "Norman non era un negromante particolarmente popolare...",
         "INTRO_DIALOGUE_2": "Gli altri abitanti del villaggio gli davano la caccia.",
@@ -606,6 +614,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "bonus di tiro",
     },
     'ja':{
+        "SHOP_TIP": "Use ↑↓, ENTER",
         "PAUSE_TIP": "ポーズ - P",
         "INTRO_DIALOGUE_1": "ノーマンは特に人気のある黒魔術師ではなかった...",
         "INTRO_DIALOGUE_2": "他の村人たちは彼を狩った",
@@ -681,6 +690,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "射撃ボーナス",
     },
     'bg':{
+        "SHOP_TIP": "Използвайте ↑↓, ENTER",
         "PAUSE_TIP": "Пауза - P",
         "INTRO_DIALOGUE_1": "Норман не беше особено популярен некромант...",
         "INTRO_DIALOGUE_2": "Другите селяни го преследваха.",
@@ -756,6 +766,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "бонус за стрелба",
     },
     'zh_CN':{
+        "SHOP_TIP": "使用 ↑↓, ENTER",
         "PAUSE_TIP": "暂停 - P",
         "INTRO_DIALOGUE_1": "诺曼不是一个特别受欢迎的死灵法师......",
         "INTRO_DIALOGUE_2": "其他村民都在追杀他",
@@ -831,6 +842,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "枪法奖励",
     },
     'zh_TW':{
+        "SHOP_TIP": "使用 ↑↓, ENTER",
         "PAUSE_TIP": "暂停 - P",
         "INTRO_DIALOGUE_1": "诺曼不是一个特别受欢迎的死灵法师......",
         "INTRO_DIALOGUE_2": "其他村民都在追杀他",
@@ -906,6 +918,7 @@ const LOCALES: Locales = {
         "STREAK_BONUS": "枪法奖励",
     },
     'tr':{
+        "SHOP_TIP": "↑↓, ENTER kullanın",
         "PAUSE_TIP": "Duraklat - P",
         "INTRO_DIALOGUE_1": "Norman pek popüler bir büyücü değildi...",
         "INTRO_DIALOGUE_2": "Diğer köylüler onun peşine düştü.",
