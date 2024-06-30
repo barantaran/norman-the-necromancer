@@ -1,7 +1,6 @@
 import spriteSrc from "./sprites.png";
 import { glyphWidth, glyphHeight, glyphWidthOverrides, lineHeight } from "./font.json";
 import { clamp, removeFromArray, vectorFromAngle } from "./helpers";
-import { render } from "./renderer";
 
 export type Sprite = number[];
 
@@ -95,8 +94,8 @@ export function drawNineSlice(sprite: Sprite, x: number, y: number, w: number, h
   drawSpriteSlice(sx2, sy2, sw1, sh1, dx2, dy2, dw1, dh1); // Center
 }
 
-let textX = 0;
-let textY = 0;
+export let textX = 0;
+export let textY = 0;
 
 /**
  * Write a string of text from the pixel font onto the screen.
@@ -104,7 +103,7 @@ let textY = 0;
  * @param x
  * @param y
  */
-export function write(text: string, x: number = textX, y: number = textY) {
+export function write(text: string, x: number = textX, y: number = textY, color: string = 'white') {
   textX = x | 0;
   textY = y | 0;
   for (let i = 0; i < text.length; i++) {
@@ -125,7 +124,7 @@ export function write(text: string, x: number = textX, y: number = textY) {
       let dx = textX;
       let dy = textY;
       ctx.font = `8px Arial`;
-      ctx.fillStyle = "white";
+      ctx.fillStyle = color;
       ctx.textBaseline = "top";
       ctx.fillText(char, dx, dy);
       const metrics = ctx.measureText(char);

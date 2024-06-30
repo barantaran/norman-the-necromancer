@@ -1,7 +1,7 @@
 import * as sprites from "./sprites.json";
 import { getMsg } from "./locales";
 
-import { canvas, clear, ctx, drawNineSlice, drawSceneSprite, drawSprite, particleEmitters, Sprite, write } from "./engine";
+import { canvas, clear, ctx, drawNineSlice, drawSceneSprite, drawSprite, particleEmitters, Sprite, write , textX, textY} from "./engine";
 import { clamp, Point, randomInt } from "./helpers";
 import { INTRO, PLAYING, SHOPPING } from "./game";
 import { shop } from "./shop";
@@ -53,7 +53,7 @@ function drawShop() {
     write(
       `${item === selected ? ">" : ""}${
         item.name
-      }  $${item.cost}\n`,
+      }  $${item.cost}\n`, textX, textY, `${item === shop.items.at(-1) ? "red":"white"}`
     );
   }
   write("\n" + selected?.description + "\n");
