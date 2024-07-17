@@ -53,7 +53,7 @@ function drawShop() {
     write(
       `${item === selected ? ">" : ""}${
         item.name
-      }  $${item.cost}\n`, textX, textY, `${item === shop.items.at(-1) ? "red":"white"}`
+      }  $${item.cost}\n`, textX, textY, `${item === shop.items.at(-1) ? "rgb(44,191,140)":"white"}`
     );
   }
   write("\n" + selected?.description + "\n");
